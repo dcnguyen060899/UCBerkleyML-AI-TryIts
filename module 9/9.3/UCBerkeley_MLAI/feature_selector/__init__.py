@@ -1,2 +1,2 @@
-# ML_AI_DuyNguyen/feature_selector/__init__.py
+# UCBerkeley_MLAI/feature_selector/__init__.py
 from .RidgeFeatureSelector import RidgeFeatureSelector

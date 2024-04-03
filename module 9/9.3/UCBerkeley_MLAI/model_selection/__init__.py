@@ -1,4 +1,4 @@
-# ML_AI_DuyNguyen/model_selection/__init__.py
+# UCBerkeley_MLAI/model_selection/__init__.py
 from .FeatureSelector import FeatureSelector
 from .ModelEvaluator import ModelEvaluator
 from .ModelTrainer import ModelTrainer

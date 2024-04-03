@@ -3,9 +3,9 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 import pandas as pd
 # Assuming ModelTrainer is updated to return a pipeline
-from ML_AI_DuyNguyen.model_selection import ModelTrainer
+from UCBerkeley_MLAI.model_selection import ModelTrainer
 # Optionally, CrossValidator can be used if it provides added value in managing CV strategies
-from ML_AI_DuyNguyen.split import HoldoutSplit
+from UCBerkeley_MLAI.split import HoldoutSplit
 
 class ModelEvaluator:
     def __init__(self, model_trainers, cv_strategies):

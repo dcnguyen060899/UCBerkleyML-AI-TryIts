@@ -1,6 +1,6 @@
 from sklearn.feature_selection import SequentialFeatureSelector, RFE
 from sklearn.linear_model import Lasso, Ridge
-from ML_AI_DuyNguyen.feature_selector import RidgeFeatureSelector
+from UCBerkeley_MLAI.feature_selector import RidgeFeatureSelector
 
 class FeatureSelector:
     def __init__(self, n_features_to_select=4, alpha=0.01):
