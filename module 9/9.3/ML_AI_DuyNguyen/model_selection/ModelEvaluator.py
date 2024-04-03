@@ -1,6 +1,7 @@
 from sklearn.model_selection import KFold, LeaveOneOut
 from sklearn.metrics import mean_squared_error
 import numpy as np
+import pandas as pd
 # Assuming ModelTrainer is updated to return a pipeline
 from ML_AI_DuyNguyen.model_selection import ModelTrainer
 # Optionally, CrossValidator can be used if it provides added value in managing CV strategies
@@ -25,6 +26,7 @@ class ModelEvaluator:
         Prints the average Mean Squared Error (MSE) for each combination of CV strategy and model.
         """
         results = {}
+        feature_importances = {}
 
         # Iterate over each CV strategy
         for strategy_name, strategy_config in self.cv_strategies.items():
@@ -45,9 +47,12 @@ class ModelEvaluator:
                     key = (strategy_name, trainer.description)
                     results.setdefault(key, []).append(mse)
 
+                    if hasattr(trainer, 'get_feature_names'):
+                        feature_importances[key] = trainer.get_feature_names()
+
         # Print the average MSE for each CV strategy and model combination
         self._print_results(results)
-        return results
+        return results, feature_importances
 
     def _select_cv(self, strategy_name, strategy_config):
         """
