@@ -13,7 +13,7 @@ class ModelTrainer:
         self.alpha = alpha  # Store alpha value
         # Include alpha in the description if it's applicable to the model
         if hasattr(model, 'alpha'):
-            self.description = f"{model.__class__.__name__}_{selection_strategy}_alpha{model.alpha}"
+            self.description = f"{model.__class__.__name__}_{selection_strategy}_alpha_{model.alpha}"
         else:
             self.description = f"{model.__class__.__name__}_{selection_strategy}"
         
