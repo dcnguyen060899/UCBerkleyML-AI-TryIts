@@ -3,14 +3,19 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
 class ModelTrainer:
-    def __init__(self, model, feature_selector=None, selection_strategy='SFS', numeric_features=None, categorical_features=None):
+    def __init__(self, model, feature_selector=None, selection_strategy='SFS', numeric_features=None, categorical_features=None, alpha=None):
         self.model = model
         self.feature_selector = feature_selector
         self.selection_strategy = selection_strategy
         self.numeric_features = numeric_features if numeric_features is not None else []
         self.categorical_features = categorical_features if categorical_features is not None else []
         self.pipeline = self.create_pipeline()
-        self.description = f"{model.__class__.__name__}_{selection_strategy}"  # For identification
+        self.alpha = alpha  # Store alpha value
+        # Include alpha in the description if it's applicable to the model
+        if hasattr(model, 'alpha'):
+            self.description = f"{model.__class__.__name__}_{selection_strategy}_alpha{model.alpha}"
+        else:
+            self.description = f"{model.__class__.__name__}_{selection_strategy}"
         
     def create_pipeline(self):
         # Preprocessor for numeric and categorical features
