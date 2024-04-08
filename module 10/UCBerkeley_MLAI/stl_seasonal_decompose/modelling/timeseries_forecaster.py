@@ -1,8 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from decomposition_based_forecaster import DecompositionBasedForecaster  # Make sure to define this class
-from ts_visualizer import Visualizer
-from uncertainty_evaluator import UncertaintyEvaluator
+from UCBerkeley_MLAI.stl_seasonal_decompose.modelling.decomposition_based_forecaster import DecompositionBasedForecaster
+from UCBerkeley_MLAI.stl_seasonal_decompose.visualizer.ts_visualizer import Visualizer
+from UCBerkeley_MLAI.stl_seasonal_decompose.data_analysis.uncertainty_evaluator import UncertaintyEvaluator
 
 class TimeSeriesForecaster:
     def __init__(self, decomposer, train_end_date, forecast_periods):

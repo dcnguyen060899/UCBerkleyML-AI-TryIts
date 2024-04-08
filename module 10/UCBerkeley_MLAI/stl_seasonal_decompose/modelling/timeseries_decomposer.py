@@ -1,9 +1,8 @@
 # timeseries_decomposer.py
 import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose, STL
-from data_preparer import DataPreparer
-from ts_visualizer import Visualizer
-from decomposition_based_forecaster import DecompositionBasedForecaster
+from UCBerkeley_MLAI.stl_seasonal_decompose.data_preparer.data_preparer import DataPreparer
+from UCBerkeley_MLAI.stl_seasonal_decompose.visualizer.ts_visualizer import Visualizer
 
 class TimeSeriesDecomposer:
     def __init__(self, df, date_col, data_col, freq, model, period, decomposition_method='seasonal_decompose'):

@@ -2,7 +2,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from extrapolate_trend import _extrapolate_trend
+from UCBerkeley_MLAI.stl_seasonal_decompose.tools._extrapolate_trend import _extrapolate_trend
 from statsmodels.tsa.filters.filtertools import convolution_filter
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
