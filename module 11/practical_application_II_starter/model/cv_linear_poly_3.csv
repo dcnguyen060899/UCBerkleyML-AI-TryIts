@@ -1,0 +1,2 @@
+Model,Alpha,Polynomial Degree,Cross-Validation,Feature Selection,Feature Selected,RMSE
+Linear Regression,,3,KFold,,,7933.389951376152
