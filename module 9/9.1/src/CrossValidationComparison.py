@@ -8,8 +8,6 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 
 
-# Assume the create_preprocessor and create_pipeline functions are defined as previously mentioned
-
 class CrossValidationComparison:
     def __init__(self, X, y, alpha=0.01):
         self.X = X
