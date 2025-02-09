@@ -3,8 +3,9 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from itertools import compress
 import numpy as np
+from abc import ABC, abstractmethod
 
-class ModelTrainer:
+class ModelTrainer(ABC):
     def __init__(self, model, feature_selector=None, selection_strategy='SFS', numeric_features=None, categorical_features=None, alpha=None, original_columns=None):
         self.model = model
         self.feature_selector = feature_selector
@@ -21,7 +22,7 @@ class ModelTrainer:
             self.description = f"{model.__class__.__name__}_{selection_strategy}_alpha_{model.alpha}"
         else:
             self.description = f"{model.__class__.__name__}_{selection_strategy}"
-        
+    @abstractmethod
     def create_pipeline(self):
         # Preprocessor for numeric and categorical features
         transformers = []
@@ -79,8 +80,7 @@ class ModelTrainer:
                 raise ValueError("Unknown feature selection method in pipeline.")
 
         return selected_features
-    
+        
+    @abstractmethod
     def train(self, X, y):
-        # Fit the pipeline
-        self.pipeline.fit(X, y)
-        return self.pipeline
+        pass
