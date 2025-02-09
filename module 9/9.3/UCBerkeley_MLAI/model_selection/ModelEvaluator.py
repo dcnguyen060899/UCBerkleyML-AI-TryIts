@@ -19,7 +19,11 @@ class ModelEvaluator:
         """
         self.model_trainers = model_trainers
         self.cv_strategies = cv_strategies
-
+        
+    def train(X, y):
+        # Fit the pipeline
+        self.pipeline.fit(X, y)
+        return self.pipeline
     # def evaluate(self, X, y):
     #     """
     #     Evaluates each model trained by the model trainers using the specified CV strategies.
